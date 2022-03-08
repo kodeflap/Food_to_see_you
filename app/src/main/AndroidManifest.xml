@@ -15,10 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodToSeeYou">
         <activity
+            android:name=".DetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
