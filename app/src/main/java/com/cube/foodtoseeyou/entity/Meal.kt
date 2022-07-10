@@ -12,11 +12,10 @@ import com.google.gson.annotations.SerializedName
 @Entity(tableName = "Meal")
 data class Meal(
     @PrimaryKey(autoGenerate = true)
-    var int: Int,
-
+    var id: Int,
     @ColumnInfo(name = "meals")
     @SerializedName("meals")
     @TypeConverters(MealListConverter::class)
     @Expose
-    val mealsItem: List<MealItem>? = null
+    var mealsItem: List<MealItem>? = null
 )

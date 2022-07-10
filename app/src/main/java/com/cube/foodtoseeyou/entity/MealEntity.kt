@@ -1,169 +1,166 @@
 package com.cube.foodtoseeyou.entity
 
-
 import com.google.gson.annotations.SerializedName
-import android.support.annotation.Keep
 import com.google.gson.annotations.Expose
 
-@Keep
 data class MealEntity(
     @SerializedName("dateModified")
     @Expose
-    val dateModified: Any,
+    val datemodified: Any,
     @SerializedName("idMeal")
     @Expose
-    val idMeal: String,
+    val idmeal: String,
     @SerializedName("strArea")
     @Expose
-    val strArea: String,
+    val strarea: String,
     @SerializedName("strCategory")
     @Expose
-    val strCategory: String,
+    val strcategory: String,
     @SerializedName("strCreativeCommonsConfirmed")
     @Expose
-    val strCreativeCommonsConfirmed: Any,
+    val strcreativecommonsconfirmed: Any,
     @SerializedName("strDrinkAlternate")
     @Expose
-    val strDrinkAlternate: Any,
+    val strdrinkalternate: Any,
     @SerializedName("strImageSource")
     @Expose
-    val strImageSource: Any,
+    val strimagesource: Any,
     @SerializedName("strIngredient1")
     @Expose
-    val strIngredient1: String,
+    val stringredient1: String,
     @SerializedName("strIngredient10")
     @Expose
-    val strIngredient10: String,
+    val stringredient10: String,
     @SerializedName("strIngredient11")
     @Expose
-    val strIngredient11: String,
+    val stringredient11: String,
     @SerializedName("strIngredient12")
     @Expose
-    val strIngredient12: String,
+    val stringredient12: String,
     @SerializedName("strIngredient13")
     @Expose
-    val strIngredient13: String,
+    val stringredient13: String,
     @SerializedName("strIngredient14")
     @Expose
-    val strIngredient14: String,
+    val stringredient14: String,
     @SerializedName("strIngredient15")
     @Expose
-    val strIngredient15: String,
+    val stringredient15: String,
     @SerializedName("strIngredient16")
     @Expose
-    val strIngredient16: Any,
+    val stringredient16: Any,
     @SerializedName("strIngredient17")
     @Expose
-    val strIngredient17: Any,
+    val stringredient17: Any,
     @SerializedName("strIngredient18")
     @Expose
-    val strIngredient18: Any,
+    val stringredient18: Any,
     @SerializedName("strIngredient19")
     @Expose
-    val strIngredient19: Any,
+    val stringredient19: Any,
     @SerializedName("strIngredient2")
     @Expose
-    val strIngredient2: String,
+    val stringredient2: String,
     @SerializedName("strIngredient20")
     @Expose
-    val strIngredient20: Any,
+    val stringredient20: Any,
     @SerializedName("strIngredient3")
     @Expose
-    val strIngredient3: String,
+    val stringredient3: String,
     @SerializedName("strIngredient4")
     @Expose
-    val strIngredient4: String,
+    val stringredient4: String,
     @SerializedName("strIngredient5")
     @Expose
-    val strIngredient5: String,
+    val stringredient5: String,
     @SerializedName("strIngredient6")
     @Expose
-    val strIngredient6: String,
+    val stringredient6: String,
     @SerializedName("strIngredient7")
     @Expose
-    val strIngredient7: String,
+    val stringredient7: String,
     @SerializedName("strIngredient8")
     @Expose
-    val strIngredient8: String,
+    val stringredient8: String,
     @SerializedName("strIngredient9")
     @Expose
-    val strIngredient9: String,
+    val stringredient9: String,
     @SerializedName("strInstructions")
     @Expose
-    val strInstructions: String,
+    val strinstructions: String,
     @SerializedName("strMeal")
     @Expose
-    val strMeal: String,
+    val strmeal: String,
     @SerializedName("strMealThumb")
     @Expose
-    val strMealThumb: String,
+    val strmealthumb: String,
     @SerializedName("strMeasure1")
     @Expose
-    val strMeasure1: String,
+    val strmeasure1: String,
     @SerializedName("strMeasure10")
     @Expose
-    val strMeasure10: String,
+    val strmeasure10: String,
     @SerializedName("strMeasure11")
     @Expose
-    val strMeasure11: String,
+    val strmeasure11: String,
     @SerializedName("strMeasure12")
     @Expose
-    val strMeasure12: String,
+    val strmeasure12: String,
     @SerializedName("strMeasure13")
     @Expose
-    val strMeasure13: String,
+    val strmeasure13: String,
     @SerializedName("strMeasure14")
     @Expose
-    val strMeasure14: String,
+    val strmeasure14: String,
     @SerializedName("strMeasure15")
     @Expose
-    val strMeasure15: String,
+    val strmeasure15: String,
     @SerializedName("strMeasure16")
     @Expose
-    val strMeasure16: Any,
+    val strmeasure16: Any,
     @SerializedName("strMeasure17")
     @Expose
-    val strMeasure17: Any,
+    val strmeasure17: Any,
     @SerializedName("strMeasure18")
     @Expose
-    val strMeasure18: Any,
+    val strmeasure18: Any,
     @SerializedName("strMeasure19")
     @Expose
-    val strMeasure19: Any,
+    val strmeasure19: Any,
     @SerializedName("strMeasure2")
     @Expose
-    val strMeasure2: String,
+    val strmeasure2: String,
     @SerializedName("strMeasure20")
     @Expose
-    val strMeasure20: Any,
+    val strmeasure20: Any,
     @SerializedName("strMeasure3")
     @Expose
-    val strMeasure3: String,
+    val strmeasure3: String,
     @SerializedName("strMeasure4")
     @Expose
-    val strMeasure4: String,
+    val strmeasure4: String,
     @SerializedName("strMeasure5")
     @Expose
-    val strMeasure5: String,
+    val strmeasure5: String,
     @SerializedName("strMeasure6")
     @Expose
-    val strMeasure6: String,
+    val strmeasure6: String,
     @SerializedName("strMeasure7")
     @Expose
-    val strMeasure7: String,
+    val strmeasure7: String,
     @SerializedName("strMeasure8")
     @Expose
-    val strMeasure8: String,
+    val strmeasure8: String,
     @SerializedName("strMeasure9")
     @Expose
-    val strMeasure9: String,
+    val strmeasure9: String,
     @SerializedName("strSource")
     @Expose
-    val strSource: Any,
+    val strsource: Any,
     @SerializedName("strTags")
     @Expose
-    val strTags: String,
+    val strtags: String,
     @SerializedName("strYoutube")
     @Expose
-    val strYoutube: String
+    val stryoutube: String
 )

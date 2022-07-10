@@ -8,8 +8,8 @@ import com.cube.foodtoseeyou.database.RecipeDatabase
 import com.cube.foodtoseeyou.entity.Category
 import com.cube.foodtoseeyou.entity.Meal
 import com.cube.foodtoseeyou.entity.MealItem
-import com.cube.foodtoseeyou.interfaces.GetData
-import com.cube.foodtoseeyou.retrofit.RetrofitClient
+import com.cube.foodtoseeyou.interfaces.GetDataService
+import com.cube.foodtoseeyou.retrofit.RetrofitClientInstance
 import kotlinx.android.synthetic.main.activity_splash_screen.*
 import kotlinx.coroutines.launch
 import pub.devrel.easypermissions.AppSettingsDialog
@@ -35,7 +35,7 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
     }
 
     fun getCategories() {
-        val service = RetrofitClient.retrofitInstance!!.create(GetData::class.java)
+        val service = RetrofitClientInstance.retrofitInstance!!.create(GetDataService::class.java)
         val call = service.getCategoryList()
         call.enqueue(object : Callback<Category> {
 
@@ -43,8 +43,8 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
                 call: Call<Category>,
                 response: Response<Category>
             ) {
-                for (arr in response.body()!!.categoriesItems!!) {
-                    getMeal(arr.strCategory)
+                for (arr in response.body()!!.categorieitems!!) {
+                    getMeal(arr.strcategory)
                 }
                 insertDataToRoom(response.body())
             }
@@ -57,7 +57,7 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
     }
 
     private fun getMeal(categoryName: String) {
-        val service = RetrofitClient.retrofitInstance!!.create(GetData::class.java)
+        val service = RetrofitClientInstance.retrofitInstance!!.create(GetDataService::class.java)
         val call = service.getMealList(categoryName)
         call.enqueue(object : Callback<Meal> {
             override fun onResponse(call: Call<Meal>, response: Response<Meal>) {
@@ -73,8 +73,8 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
     fun insertDataToRoom(category: Category?) {
         launch {
             this.let {
-                for (arr in category!!.categoriesItems!!) {
-                    RecipeDatabase.getDB(this@SplashScreen).recipeDao().insertCategory(arr)
+                for (arr in category!!.categorieitems!!) {
+                    RecipeDatabase.getDatabase(this@SplashScreen).recipeDao().insertCategory(arr)
                 }
             }
         }
@@ -91,7 +91,7 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
                         arr.strMeal,
                         arr.strMealThumb
                     )
-                    RecipeDatabase.getDB(this@SplashScreen).recipeDao().insertMeal(mealitemModel)
+                    RecipeDatabase.getDatabase(this@SplashScreen).recipeDao().insertMeal(mealitemModel)
                 }
                 getStartedBtn.visibility = View.VISIBLE
             }
@@ -101,7 +101,7 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
     fun clearDatabase() {
         launch {
             this.let {
-                RecipeDatabase.getDB(this@SplashScreen).recipeDao().clearDb()
+                RecipeDatabase.getDatabase(this@SplashScreen).recipeDao().clearDb()
             }
         }
     }

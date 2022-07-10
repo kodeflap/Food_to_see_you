@@ -46,6 +46,7 @@
                 android:layout_gravity="start"
                 android:layout_margin="@dimen/_10sdp"
                 android:background="@drawable/widget_bg"
+                android:contentDescription="@string/app_name"
                 android:padding="@dimen/_10sdp"
                 android:src="@drawable/ic_back" />
 
@@ -56,6 +57,7 @@
                 android:layout_gravity="end"
                 android:layout_margin="@dimen/_10sdp"
                 android:background="@drawable/widget_bg"
+                android:contentDescription="@string/app_name"
                 android:padding="@dimen/_10sdp"
                 android:src="@drawable/ic_fav" />
 
@@ -64,6 +66,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"

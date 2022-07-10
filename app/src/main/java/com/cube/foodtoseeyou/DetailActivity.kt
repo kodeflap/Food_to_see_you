@@ -7,12 +7,12 @@ import android.view.View
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.cube.foodtoseeyou.entity.MealResponse
-import com.cube.foodtoseeyou.interfaces.GetData
-import com.cube.foodtoseeyou.retrofit.RetrofitClient
+import com.cube.foodtoseeyou.interfaces.GetDataService
+import com.cube.foodtoseeyou.retrofit.RetrofitClientInstance
 import kotlinx.android.synthetic.main.activity_detail.*
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class DetailActivity : BaseActivity() {
     var youtubeLink = ""
@@ -26,46 +26,51 @@ class DetailActivity : BaseActivity() {
         getSpecificItem(id!!)
 
         back.setOnClickListener {
-            var uri = Uri.parse(youtubeLink)
+            finish()
+        }
+
+        btn_youtube.setOnClickListener {
+            val uri = Uri.parse(youtubeLink)
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
     }
 
     private fun getSpecificItem(id: String) {
-        val service = RetrofitClient.retrofitInstance!!.create(GetData::class.java)
+        val service = RetrofitClientInstance.retrofitInstance!!.create(GetDataService::class.java)
         val call = service.getSpecificItem(id)
-        call.enqueue(object : retrofit2.Callback<MealResponse> {
+        call.enqueue(object : Callback<MealResponse> {
+
             override fun onResponse(call: Call<MealResponse>, response: Response<MealResponse>) {
-                Glide.with(this@DetailActivity).load(response.body())
-                tv_category.text = response.body()!!.meals[0].strMeal
+                Glide.with(this@DetailActivity).load(response.body()!!.mealsEntity[0].strmealthumb).into(imageItem)
+                tv_category.text = response.body()!!.mealsEntity[0].strmeal
                 var ingredient =
-                    "${response.body()!!.meals[0].strIngredient1}  ${response.body()!!.meals[0].strMeasure1}\n" +
-                            "${response.body()!!.meals[0].strIngredient2}  ${response.body()!!.meals[0].strMeasure2}\n" +
-                            "${response.body()!!.meals[0].strIngredient3}  ${response.body()!!.meals[0].strMeasure3}\n" +
-                            "${response.body()!!.meals[0].strIngredient4}  ${response.body()!!.meals[0].strMeasure4}\n" +
-                            "${response.body()!!.meals[0].strIngredient5}  ${response.body()!!.meals[0].strMeasure5}\n" +
-                            "${response.body()!!.meals[0].strIngredient6}  ${response.body()!!.meals[0].strMeasure6}\n" +
-                            "${response.body()!!.meals[0].strIngredient7}  ${response.body()!!.meals[0].strMeasure7}\n" +
-                            "${response.body()!!.meals[0].strIngredient8}  ${response.body()!!.meals[0].strMeasure8}\n" +
-                            "${response.body()!!.meals[0].strIngredient9}  ${response.body()!!.meals[0].strMeasure9}\n" +
-                            "${response.body()!!.meals[0].strIngredient10}  ${response.body()!!.meals[0].strMeasure10}\n" +
-                            "${response.body()!!.meals[0].strIngredient11}  ${response.body()!!.meals[0].strMeasure11}\n" +
-                            "${response.body()!!.meals[0].strIngredient12}  ${response.body()!!.meals[0].strMeasure12}\n" +
-                            "${response.body()!!.meals[0].strIngredient13}  ${response.body()!!.meals[0].strMeasure13}\n" +
-                            "${response.body()!!.meals[0].strIngredient14}  ${response.body()!!.meals[0].strMeasure14}\n" +
-                            "${response.body()!!.meals[0].strIngredient15}  ${response.body()!!.meals[0].strMeasure15}\n" +
-                            "${response.body()!!.meals[0].strIngredient16}  ${response.body()!!.meals[0].strMeasure16}\n" +
-                            "${response.body()!!.meals[0].strIngredient17}  ${response.body()!!.meals[0].strMeasure17}\n" +
-                            "${response.body()!!.meals[0].strIngredient18}  ${response.body()!!.meals[0].strMeasure18}\n" +
-                            "${response.body()!!.meals[0].strIngredient19}  ${response.body()!!.meals[0].strMeasure19}\n" +
-                            "${response.body()!!.meals[0].strIngredient20}  ${response.body()!!.meals[0].strMeasure20}\n"
+                    "${response.body()!!.mealsEntity[0].stringredient1}  ${response.body()!!.mealsEntity[0].strmeasure1}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient2}  ${response.body()!!.mealsEntity[0].strmeasure2}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient3}  ${response.body()!!.mealsEntity[0].strmeasure3}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient4}  ${response.body()!!.mealsEntity[0].strmeasure4}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient5}  ${response.body()!!.mealsEntity[0].strmeasure5}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient6}  ${response.body()!!.mealsEntity[0].strmeasure6}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient7}  ${response.body()!!.mealsEntity[0].strmeasure7}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient8}  ${response.body()!!.mealsEntity[0].strmeasure8}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient9}  ${response.body()!!.mealsEntity[0].strmeasure9}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient10}  ${response.body()!!.mealsEntity[0].strmeasure10}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient11}  ${response.body()!!.mealsEntity[0].strmeasure11}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient12}  ${response.body()!!.mealsEntity[0].strmeasure12}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient13}  ${response.body()!!.mealsEntity[0].strmeasure13}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient14}  ${response.body()!!.mealsEntity[0].strmeasure14}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient15}  ${response.body()!!.mealsEntity[0].strmeasure15}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient16}  ${response.body()!!.mealsEntity[0].strmeasure16}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient17}  ${response.body()!!.mealsEntity[0].strmeasure17}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient18}  ${response.body()!!.mealsEntity[0].strmeasure18}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient19}  ${response.body()!!.mealsEntity[0].strmeasure19}\n" +
+                            "${response.body()!!.mealsEntity[0].stringredient20}  ${response.body()!!.mealsEntity[0].strmeasure20}\n"
 
                 tv_ingredients.text = ingredient
-                tv_instruction.text = response.body()!!.meals[0].strInstructions
+                tv_instruction.text = response.body()!!.mealsEntity[0].strinstructions
 
-                if (response.body()!!.meals[0].strSource != null) {
-                    youtubeLink = response.body()!!.meals[0].strSource as String
+                if (response.body()!!.mealsEntity[0].strsource != null) {
+                    youtubeLink = response.body()!!.mealsEntity[0].strsource as String
                 } else {
                     btn_youtube.visibility = View.GONE
                 }

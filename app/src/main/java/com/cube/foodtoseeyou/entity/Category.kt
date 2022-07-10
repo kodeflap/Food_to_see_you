@@ -15,5 +15,5 @@ data class Category(
     @SerializedName("categories")
     @TypeConverters(CategoryListConverter::class)
     @Expose
-    val categoriesItems: List<CategoryItems>? = null
+    var categorieitems: List<CategoryItems>? = null
 )

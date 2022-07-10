@@ -2,7 +2,6 @@ package com.cube.foodtoseeyou
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cube.foodtoseeyou.adapter.CategoryAdapter
 import com.cube.foodtoseeyou.adapter.SubCategoryAdapter
@@ -11,6 +10,7 @@ import com.cube.foodtoseeyou.entity.CategoryItems
 import com.cube.foodtoseeyou.entity.MealItem
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.coroutines.launch
+
 
 class HomeActivity : BaseActivity() {
     //array list initialization
@@ -37,7 +37,7 @@ class HomeActivity : BaseActivity() {
         }
     }
 
-    private val onClickedSub = object : SubCategoryAdapter.OnItemClickListner {
+    private val onClickedSub = object : SubCategoryAdapter.OnItemClickListener {
         override fun onClicked(id: String) {
             var intent = Intent(this@HomeActivity, DetailActivity::class.java)
             intent.putExtra("id",id)
@@ -46,14 +46,15 @@ class HomeActivity : BaseActivity() {
     }
 
     private fun getMealFromDB(categoryName: String) {
+        tv_category.text = "$categoryName Category"
         launch {
             this.let {
-                var category = RecipeDatabase.getDB(this@HomeActivity).recipeDao().getSpecificMealList(categoryName)
+                var category = RecipeDatabase.getDatabase(this@HomeActivity).recipeDao().getSpecificMealList(categoryName)
                 subCategoryList = category as ArrayList<MealItem>
                 subCategoryAdapter.setData(subCategoryList)
                 dish_subcategory_rv.layoutManager =
                     LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
-                dish_subcategory_rv.adapter = categoryAdapter
+                dish_subcategory_rv.adapter = subCategoryAdapter
             }
         }
     }
@@ -61,10 +62,10 @@ class HomeActivity : BaseActivity() {
     private fun getDataFromDB() {
        launch {
             this.let {
-                var category = RecipeDatabase.getDB(this@HomeActivity).recipeDao().getAllCategory()
+                var category = RecipeDatabase.getDatabase(this@HomeActivity).recipeDao().getAllCategory()
                 categoryList = category as ArrayList<CategoryItems>
                 categoryList.reverse()
-                getMealFromDB(categoryList[0].strCategory)
+                getMealFromDB(categoryList[0].strcategory)
                 categoryAdapter.setData(categoryList)
                 dish_rv.layoutManager = LinearLayoutManager(this@HomeActivity, LinearLayoutManager.HORIZONTAL, false)
                 dish_rv.adapter = categoryAdapter

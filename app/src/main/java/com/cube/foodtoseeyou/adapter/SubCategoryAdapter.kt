@@ -11,20 +11,20 @@ import com.cube.foodtoseeyou.entity.MealItem
 import kotlinx.android.synthetic.main.category_sub_item.view.*
 
 
-class SubCategoryAdapter : RecyclerView.Adapter<SubCategoryAdapter.ViewHolder>() {
+class SubCategoryAdapter : RecyclerView.Adapter<SubCategoryAdapter.RecipeViewHolder>() {
     var subCategoryList = ArrayList<MealItem>()
-    var listener: SubCategoryAdapter.OnItemClickListner? = null
+    var listener: SubCategoryAdapter.OnItemClickListener? = null
     var context: Context? = null
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        context = parent.context
-        return ViewHolder(
-            (LayoutInflater.from(parent.context).inflate(R.layout.category_sub_item, parent, false))
-        )
+    class RecipeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
+        context = parent.context
+        return RecipeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.category_sub_item, parent, false))
+    }
+
+    override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         holder.itemView.sub_dish_name.text = subCategoryList[position].strMeal
         Glide.with(context!!).load(subCategoryList[position].strMealThumb)
             .into(holder.itemView.sub_dish_img)
@@ -37,20 +37,16 @@ class SubCategoryAdapter : RecyclerView.Adapter<SubCategoryAdapter.ViewHolder>()
         return subCategoryList.size
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-    }
-
-    //data setting fuunction
+    //data setting function
     fun setData(subCategoryData: List<MealItem>) {
         subCategoryList = subCategoryData as ArrayList<MealItem>
     }
 
-    fun setClickListener(listener1: SubCategoryAdapter.OnItemClickListner) {
+    fun setClickListener(listener1: SubCategoryAdapter.OnItemClickListener) {
         listener = listener1
     }
 
-    interface OnItemClickListner {
+    interface OnItemClickListener {
         fun onClicked(id: String)
     }
 }

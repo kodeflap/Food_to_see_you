@@ -9,7 +9,7 @@ import com.cube.foodtoseeyou.entity.MealItem
 
 @Dao
 interface RecipeDao {
-    @Query("Select * from categoryitems order by id DESC")
+    @Query("SELECT * FROM categoryitems ORDER BY id DESC")
     suspend fun getAllCategory(): List<CategoryItems>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -18,9 +18,9 @@ interface RecipeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMeal(mealsItem: MealItem?)
 
-    @Query("Delete from categoryitems")
+    @Query("DELETE FROM categoryitems")
     suspend fun clearDb()
 
-    @Query("Select * from MealItems where categoryName = categoryName order by id DESC")
+    @Query("SELECT * FROM MealItems WHERE categoryName = :categoryName ORDER BY id DESC")
     suspend fun getSpecificMealList(categoryName: String): List<MealItem>
 }

@@ -11,8 +11,8 @@ import com.cube.foodtoseeyou.entity.convertor.CategoryListConverter
 import com.cube.foodtoseeyou.entity.convertor.MealListConverter
 
 @Database(
-    entities = [Recipe::class, Category::class, CategoryItems::class, Meal::class, MealItem::class],
-    version = 1,
+    entities = [Recipe::class, CategoryItems::class, Category::class, Meal::class, MealItem::class],
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(CategoryListConverter::class, MealListConverter::class)
@@ -21,13 +21,14 @@ abstract class RecipeDatabase : RoomDatabase() {
         var recipeDB: RecipeDatabase? = null
 
         @Synchronized
-        fun getDB(context: Context): RecipeDatabase {
+        fun getDatabase(context: Context): RecipeDatabase {
             if (recipeDB == null) {
                 recipeDB = Room.databaseBuilder(
                     context,
                     RecipeDatabase::class.java,
                     "recipe.db"
-                ).build()
+                ).fallbackToDestructiveMigration()
+                    .build()
             }
             return recipeDB!!
         }
