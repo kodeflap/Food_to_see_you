@@ -39,11 +39,11 @@ Food to see you is a recipe and food-based application developed for the android
   </tr>
   <tr>
      <td>API</td>
-     <td>[TheMealDB.com](https://www.themealdb.com/)</td>
+     <td>![TheMealDB.com](https://www.themealdb.com/)</td>
    </tr>
    <tr>
     <td>UI Framework</td>
-    <td><ul><li>Android UI(XML)/li></ul></td>
+    <td>Android UI(XML)</td>
    </tr>
    <tr>
     <td>Libraries </td>
