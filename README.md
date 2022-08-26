@@ -6,12 +6,12 @@ Food to see you is a recipe and food-based application developed for the android
 
 ## Features
 
--Search 
--Categorizing
--Instructions
--Details of the recipes
--Favorite
--Video Tutorials
+<li>Search 
+<li>Categorizing
+<li>Instructions
+<li>Details of the recipes
+<li>Favorite
+<li>Video Tutorials
 
 ## Tech Stack
 
