@@ -18,35 +18,48 @@ Food to see you is a recipe and food-based application developed for the android
 <table>
   <tr>
      <td>Mobile OS</td>
-     <td>App Architecture</td>
-     <td>Programming Language</td>
-     <td>ToolKit</td>
-     <td>Database</td>
-     <td>API</td>
-     <td>UI Framework</td>
-     <td>Libraries </td>
+     <td><ul><li>Android</li></ul></td>
   </tr>
   <tr>
-     <td><ul><li>Android</li></ul></td>
-     <td><ul><li>MVVM</li></ul></td>
-     <td><ul><li>Kotlin</li></ul></td>
-     <td><ul><li>Android studio</li>
-     <li>Android SDK</li></ul></td>
-     <td><ul><li>Room</li></ul></td>
-     <td><ul><li>[TheMealDB.com](https://www.themealdb.com/)</li></ul></td>
-     <td><ul><li>Android UI(XML)/li></ul></td>
-     <td>
-<ul>
-<li>Scalable unit size library</li>
-<li>Room Library</li>
-<li>Easy Permission</li>
-<li>Navigation</li>
-<li>Coroutine</li>
-<li>Retrofit</li>
-<li>Glide</li>
-</ul></td>
+     <td>App Architecture</td>
+      <td><ul><li>MVVM</li></ul></td>
   </tr>
- </table>
+  <tr>
+     <td>Programming Language</td>
+     <td><ul><li>Kotlin</li></ul></td>
+  </tr>
+  <tr>
+     <td>ToolKit</td>
+      <td><ul><li>Android studio</li>
+     <li>Android SDK</li></ul></td>
+  </tr>
+  <tr>
+     <td>Database</td>
+     <td><ul><li>Room</li></ul></td>
+  </tr>
+  <tr>
+     <td>API</td>
+     <td><ul><li>[TheMealDB.com](https://www.themealdb.com/)</li></ul></td>
+   </tr>
+   <tr>
+    <td>UI Framework</td>
+    <td><ul><li>Android UI(XML)/li></ul></td>
+   </tr>
+   <tr>
+    <td>Libraries </td>
+    <td>
+      <ul>
+          <li>Scalable unit size library</li>
+          <li>Room Library</li>
+          <li>Easy Permission</li>
+          <li>Navigation</li>
+          <li>Coroutine</li>
+          <li>Retrofit</li>
+          <li>Glide</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## APP ScreenShot
 
