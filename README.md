@@ -18,15 +18,15 @@ Food to see you is a recipe and food-based application developed for the android
 <table>
   <tr>
      <td>Mobile OS</td>
-     <td><ul><li>Android</li></ul></td>
+     <td>Android</td>
   </tr>
   <tr>
      <td>App Architecture</td>
-      <td><ul><li>MVVM</li></ul></td>
+      <td>MVVM</td>
   </tr>
   <tr>
      <td>Programming Language</td>
-     <td><ul><li>Kotlin</li></ul></td>
+     <td>Kotlin</td>
   </tr>
   <tr>
      <td>ToolKit</td>
@@ -35,11 +35,11 @@ Food to see you is a recipe and food-based application developed for the android
   </tr>
   <tr>
      <td>Database</td>
-     <td><ul><li>Room</li></ul></td>
+     <td>Room</td>
   </tr>
   <tr>
      <td>API</td>
-     <td><ul><li>[TheMealDB.com](https://www.themealdb.com/)</li></ul></td>
+     <td>[TheMealDB.com](https://www.themealdb.com/)</td>
    </tr>
    <tr>
     <td>UI Framework</td>
