@@ -1,0 +1,107 @@
+
+# Food To See You
+
+Food to see you is a recipe and food-based application developed for the android mobile platform. It is a personal project that I created at my free times. The main concept of the app is to make cooking easy, faster, and convenient. The best thing is that it is already categorised so you can save time in searching for long hour and also the user is provided with massive recipe list. All you need is to search go through categories or search bar and done you will be provided with search result you can also added to favourite. It offers you useful cooking content and helps you to improve your cooking skill.
+![](https://static.wixstatic.com/media/518b8e_e038f7dd2073458bb405cf8f6b7242dd~mv2.png/v1/crop/x_0,y_56,w_1080,h_969/fill/w_828,h_743,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/20220713_122243_0000.png)
+
+## Features
+
+-Search 
+-Categorizing
+-Instructions
+-Details of the recipes
+-Favorite
+-Video Tutorials
+
+## Tech Stack
+
+<table>
+  <tr>
+     <td>Mobile OS</td>
+     <td>App Architecture</td>
+     <td>Programming Language</td>
+     <td>ToolKit</td>
+     <td>Database</td>
+     <td>API</td>
+     <td>UI Framework</td>
+     <td>Libraries </td>
+  </tr>
+  <tr>
+     <td><ul><li>Android</li></ul></td>
+     <td><ul><li>MVVM</li></ul></td>
+     <td><ul><li>Kotlin</li></ul></td>
+     <td><ul><li>Android studio</li>
+     <li>Android SDK</li></ul></td>
+     <td><ul><li>Room</li></ul></td>
+     <td><ul><li>[TheMealDB.com](https://www.themealdb.com/)</li></ul></td>
+     <td><ul><li>Android UI(XML)/li></ul></td>
+     <td>
+<ul>
+<li>Scalable unit size library</li>
+<li>Room Library</li>
+<li>Easy Permission</li>
+<li>Navigation</li>
+<li>Coroutine</li>
+<li>Retrofit</li>
+<li>Glide</li>
+</ul></td>
+  </tr>
+ </table>
+
+## APP ScreenShot
+
+<table>
+  <tr>
+    <td valign="top"><img src="https://static.wixstatic.com/media/518b8e_930dbadf8eb9422289db134ea1671e57~mv2.png/v1/fill/w_238,h_450,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cache41de4b27-4cb8-452e-a8ea-51fe734e3371.png"></td>
+    <td valign="top"><img src="https://static.wixstatic.com/media/518b8e_3eb4c0042d654664bc535fb78bb2d723~mv2.png/v1/fill/w_238,h_450,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cachecd1439f3-cb19-4477-9241-5e30f9887a36.png"></td>
+    <td valign="top"><img src="https://static.wixstatic.com/media/518b8e_fc457e8abf314bab990c3951c8e4fb73~mv2.png/v1/fill/w_238,h_450,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cachedeeca995-f597-44fc-961c-dab30acc9b7a.png"></td>
+  </tr>
+ </table>
+
+
+## Getting Started
+
+## Prerequisites
+ 
+You need to know a basic understanding of 
+
+- Android Fundamentals.
+- Kotlin language.
+- [Knowlegde of API](https://medium.com/@KodeFlap/introduction-to-apis-c7e8a558135)
+- MVVM architecture
+- Room Database
+- Integration of third party libraries.
+
+So let's get started.
+
+1. Install Android studio
+2. Install Android SDK(28)
+
+### Installation
+
+1. [Clone the repo](https://github.com/poojaOfficial321/Food_to_see_you.git)
+2. Start a new project as import from Version Control in android studio and paste the clone URL and finish.
+3.  Run your application.
+
+
+## Contributing
+
+Contributions are always welcome!
+Contributions are what make the open-source project amazing. Which helps to learn, inspire, and found new modes in the development phase of a coder. Any contribution to this project is greatly appreciated.
+
+If you have any suggestion or found any issues please free to put your suggestion.
+
+1. You can [clone the repo](https://github.com/poojaOfficial321/RemoteChains/) or Fork it
+
+2. Create your branch check out to your branch (git checkout -b)
+Suggested naming **feature/ feature_name
+
+3. Commit your changes(git commit -m "new feature name")
+
+4. Push to branch(git push origin feature/feature_name)
+
+5. Open pull request
+
+## LICENSE
+
+[MIT license](LICENSE)
