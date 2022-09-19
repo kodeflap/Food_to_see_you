@@ -11,9 +11,12 @@
       <a href= "https://gitHub.com/kodeflap/Food_to_see_you/issues/ ">
       <img src = "https://img.shields.io/github/issues/kodeFlap/Food_to_see_you.svg" height = 25/></a>
 </p>
-# Food To See You
+
+
+# About
 
 Food to see you is a recipe and food-based application developed for the android mobile platform. It is a personal project that I created at my free times. The main concept of the app is to make cooking easy, faster, and convenient. The best thing is that it is already categorised so you can save time in searching for long hour and also the user is provided with massive recipe list. All you need is to search go through categories or search bar and done you will be provided with search result you can also added to favourite. It offers you useful cooking content and helps you to improve your cooking skill.
+
 ![](https://static.wixstatic.com/media/518b8e_e038f7dd2073458bb405cf8f6b7242dd~mv2.png/v1/crop/x_0,y_56,w_1080,h_969/fill/w_828,h_743,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/20220713_122243_0000.png)
 
 ## Features
