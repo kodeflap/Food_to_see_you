@@ -1,103 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:scrollbars="none">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:padding="15dp"
-                android:text="Food to see You"
-                android:textSize="@dimen/_20ssp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:fontFamily="@font/gilroy_bold"
+                android:padding="@dimen/_10sdp"
+                android:text="All Recipes"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
                 app:cardCornerRadius="@dimen/_10sdp"
-                app:cardElevation="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="@+id/textView"
-                app:layout_constraintStart_toStartOf="@+id/textView"
-                app:layout_constraintTop_toBottomOf="@+id/textView">
+                app:cardElevation="@dimen/_10sdp">
+
 
                 <SearchView
-                    android:id="@+id/search"
+                    android:id="@+id/search_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/search_bg"
                     android:iconifiedByDefault="false"
-                    android:queryHint="Search here..."
+                    android:queryBackground="@color/transparent"
+                    android:queryHint="Search for recipes"
                     android:theme="@style/ThemeOverlay.Search" />
+
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dish_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_margin="@dimen/_4sdp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView"
-                app:layout_constraintVertical_bias="0.03"
                 tools:itemCount="1"
                 tools:listitem="@layout/category_item" />
 
             <TextView
-                android:id="@+id/tv_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:padding="@dimen/_10sdp"
-                android:text="Categories"
+                android:fontFamily="@font/gilroy_bold"
+                android:paddingStart="@dimen/_10sdp"
+                android:text="Category name"
+                android:id="@+id/tv_category"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_15ssp"
-                app:layout_constraintEnd_toEndOf="@+id/dish_rv"
-                app:layout_constraintStart_toStartOf="@+id/dish_rv"
-                app:layout_constraintTop_toBottomOf="@+id/dish_rv" />
+                android:textSize="@dimen/_15ssp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/dish_subcategory_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_margin="@dimen/_4sdp"
+                android:padding="@dimen/_4sdp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_category"
                 tools:itemCount="1"
                 tools:listitem="@layout/category_sub_item" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

@@ -27,7 +27,7 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
 
         readStorageTask()
 
-        getStartedBtn.setOnClickListener {
+        btn_start.setOnClickListener {
             var intent = Intent(this@SplashScreen, HomeActivity::class.java)
             startActivity(intent)
             finish()
@@ -93,7 +93,7 @@ class SplashScreen : BaseActivity(), RationaleCallbacks, PermissionCallbacks {
                     )
                     RecipeDatabase.getDatabase(this@SplashScreen).recipeDao().insertMeal(mealitemModel)
                 }
-                getStartedBtn.visibility = View.VISIBLE
+                btn_start.visibility = View.VISIBLE
             }
         }
     }
