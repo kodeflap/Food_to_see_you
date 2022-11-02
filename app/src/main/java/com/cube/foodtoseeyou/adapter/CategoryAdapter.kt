@@ -19,7 +19,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.RecipeViewHolder>()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipeViewHolder {
-    context = parent.context
+        context = parent.context
         return RecipeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.category_item, parent, false))
     }
 

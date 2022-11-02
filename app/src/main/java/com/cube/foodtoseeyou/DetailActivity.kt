@@ -25,7 +25,7 @@ class DetailActivity : BaseActivity() {
 
         getSpecificItem(id!!)
 
-        back.setOnClickListener {
+        btn_back.setOnClickListener {
             finish()
         }
 
@@ -42,7 +42,7 @@ class DetailActivity : BaseActivity() {
         call.enqueue(object : Callback<MealResponse> {
 
             override fun onResponse(call: Call<MealResponse>, response: Response<MealResponse>) {
-                Glide.with(this@DetailActivity).load(response.body()!!.mealsEntity[0].strmealthumb).into(imageItem)
+                Glide.with(this@DetailActivity).load(response.body()!!.mealsEntity[0].strmealthumb).into(dish_container)
                 tv_category.text = response.body()!!.mealsEntity[0].strmeal
                 var ingredient =
                     "${response.body()!!.mealsEntity[0].stringredient1}  ${response.body()!!.mealsEntity[0].strmeasure1}\n" +
